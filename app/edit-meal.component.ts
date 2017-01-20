@@ -4,8 +4,17 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'edit-meal',
   template: `
-    <div>
-      <h3>Edit Meal Tracker Form Here</h3>
+    <div *ngIf="childSelectedMeal">
+      <h3>Edit {{childSelectedMeal.Name}}</h3>
+      <div>
+        <label>Edit Meal Name:</label>
+        <input [(ngModel)]="childSelectedMeal.name">
+        <label>Edit Meal Details:</label>
+        <input [(ngModel)]="childSelectedMeal.details">
+        <label>Edit Calories:</label>
+        <input [(ngModel)]="childSelectedMeal.calories">
+        <button class="btn btn-danger" (click)="doneButtonClicked()">Edit Meal</button>
+      </div>
     </div>
 `
 })

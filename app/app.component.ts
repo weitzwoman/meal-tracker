@@ -11,10 +11,10 @@ import { Meal } from './meal.model';
         <new-meal (newMealSender)="addMeal($event)"></new-meal>
       </div>
       <div class="col-md-4">
-        <meal-list [childMealList]="masterMealList"></meal-list>
+        <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"></meal-list>
       </div>
       <div class="col-md-4">
-        <edit-meal></edit-meal>
+        <edit-meal [childSelectedMeal]="selectedMeal" (doneButtonClickedSender)="finishedEditing()"></edit-meal>
       </div>
     </div>
   </div>
