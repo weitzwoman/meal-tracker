@@ -8,7 +8,7 @@ import { Meal } from './meal.model';
     <h1>Meal Tracker</h1>
     <div class="row">
       <div class="col-md-4">
-        <new-meal></new-meal>
+        <new-meal (newMealSender)="addMeal($event)"></new-meal>
       </div>
       <div class="col-md-4">
         <meal-list [childMealList]="masterMealList"></meal-list>
