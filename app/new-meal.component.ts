@@ -6,14 +6,13 @@ import { Meal } from './meal.model';
   template: `
     <div>
       <h3>New Meal Information</h3>
-      <div>
+      <div class="well">
         <label>Enter Meal Name:</label>
-        <input #newName>
+        <input #newName class="form-control">
         <label>Enter Meal Details:</label>
-        <input #newDetails>
+        <input #newDetails class="form-control">
         <label>Enter Calories:</label>
-        <input #newCalories>
-        <br>
+        <input #newCalories class="form-control" type="number">
         <br>
         <button class="btn btn-warning" (click)="submitForm(newName.value, newDetails.value, newCalories.value); newName.value=''; newDetails.value=''; newCalories.value='';">Add Meal</button>
       </div>

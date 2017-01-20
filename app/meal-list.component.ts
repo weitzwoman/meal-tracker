@@ -5,21 +5,25 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
     <div>
-      <h3>Tracked Meals</h3>
-      <div>
-        <select (change)="onChange($event.target.value)">
-          <option value="allMeals" selected="selected">List All Meals Logged</option>
-          <option value="higherCalories">High Calorie Meals</option>
-          <option value="lowerCalories">Low Calorie Meals</option>
-        </select>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Tracked Meals</h3>
+        </div>
+        <div class="col-md-6">
+          <select (change)="onChange($event.target.value)" class="form-control">
+            <option value="allMeals" selected="selected">List All Meals Logged</option>
+            <option value="higherCalories">High Calorie Meals</option>
+            <option value="lowerCalories">Low Calorie Meals</option>
+          </select>
+        </div>
       </div>
-      <div *ngFor="let currentMeal of childMealList | calories:filterByCalories">
+      <div *ngFor="let currentMeal of childMealList | calories:filterByCalories" class="well">
         <h4>{{currentMeal.name}}</h4>
         <ul>
           <li>Details: {{currentMeal.details}}</li>
           <li>Calories: {{currentMeal.calories}}</li>
         </ul>
-        <button class="btn btn-warning" (click)="editButtonHasBeenClicked(currentMeal)">Edit Meal</button>
+        <button class="btn btn-warning" (click)="editButtonHasBeenClicked(currentMeal)">Edit\ {{currentMeal.name}}</button>
         <br>
       </div>
     </div>
