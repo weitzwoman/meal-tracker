@@ -6,9 +6,17 @@ import { Meal } from './meal.model';
   template: `
   <div class="container">
     <h1>Meal Tracker</h1>
-    <new-meal></new-meal>
-    <meal-list></meal-list>
-    <edit-meal></edit-meal>
+    <div class="row">
+      <div class="col-md-4">
+        <new-meal></new-meal>
+      </div>
+      <div class="col-md-4">
+        <meal-list [childMealList]="masterMealList"></meal-list>
+      </div>
+      <div class="col-md-4">
+        <edit-meal></edit-meal>
+      </div>
+    </div>
   </div>
   `
 })
