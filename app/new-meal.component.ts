@@ -2,9 +2,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
 
 @Component({
-  selector: 'new-task',
+  selector: 'new-meal',
   template: `
+    <div>
     <h3>New Meal Form Here</h3>
+    </div>
   `
 })
 

@@ -4,6 +4,9 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'meal-list',
   template: `
+    <div>
+      <h3>Meal List Goes Here</h3>
+    </div>
   `
 })
 
